@@ -91,17 +91,90 @@ describe('multiply', () => {
 });
 
 describe('divide', () => {
+  test('can divide small numbers', () => {
+    expected = 2;
+    actual = divide(8, 4);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide large numbers', () => {
+    expected = 5;
+    actual = divide(1000, 200);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide negative numbers', () => {
+    expected = 5;
+    actual = divide(-25, -5);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide by zero', () => {
+    expected = Infinity;
+    actual = divide(200, 0);
+    expect(actual).toBe(expected);
+  });
 
 });
 
 describe('modulus', () => {
+  test('can modulus two small numbers', () => {
+    expected = 0;
+    actual = modulus(25, 5);
+    expect(actual).toBe(expected);
+  });
 
+  test('can modulus two large numbers', () => {
+    expected = 0;
+    actual = modulus(1000, 100);
+    expect(actual).toBe(expected);
+  });
+
+  // can i even test the next one??
+  // test('can modulus two negative numbers', () => {
+  //   expected = 0;
+  //   actual = modulus(-25, -5);
+  //   expect(actual).toBe(expected);
+  // });
 });
 
 describe('even', () => {
+  test('test small number', () => {
+    expected = true;
+    actual = even(6);
+    expect(actual).toBe(expected);
+  });
+
+  test('test large number', () => {
+    expected = true;
+    actual = even(2456786);
+    expect(actual).toBe(expected);
+  });
+
+  test('test false', () => {
+    expected = false;
+    actual = even(24567);
+    expect(actual).toBe(expected);
+  });
 
 });
 
 describe('odd', () => {
+  test('test small number', () => {
+    expected = true;
+    actual = odd(7);
+    expect(actual).toBe(expected);
+  });
 
+  test('test large number', () => {
+    expected = true;
+    actual = odd(24567865);
+    expect(actual).toBe(expected);
+  });
+
+  test('test false', () => {
+    expected = false;
+    actual = odd(2456);
+    expect(actual).toBe(expected);
+  });
 });

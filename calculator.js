@@ -20,14 +20,16 @@ const modulus = function(i, j){
 
 const even = function(k){
     if(k % 2 == 0){
-        return "true";
+        return true;
     }
+    return false;
 }
 
 const odd = function(l){
     if(l % 2 != 0){
-        return "odd";
+        return true;
     }
+    return false;
 }
 
 module.exports = { 
