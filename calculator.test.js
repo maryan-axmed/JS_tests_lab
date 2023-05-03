@@ -4,8 +4,7 @@ const {
   multiply,
   divide,
   modulus,
-  even,
-  odd,
+  evenOrOdd
 } = require("./calculator");
 
 describe('sum', () => { 
@@ -130,51 +129,31 @@ describe('modulus', () => {
     expect(actual).toBe(expected);
   });
 
-  // can i even test the next one??
-  // test('can modulus two negative numbers', () => {
-  //   expected = 0;
-  //   actual = modulus(-25, -5);
-  //   expect(actual).toBe(expected);
-  // });
 });
 
-describe('even', () => {
-  test('test small number', () => {
-    expected = true;
-    actual = even(6);
+describe('even or odd', () => {
+  test('test small even number', () => {
+    expected = "even";
+    actual = evenOrOdd(6);
     expect(actual).toBe(expected);
   });
 
-  test('test large number', () => {
-    expected = true;
-    actual = even(2456786);
+  test('test large even number', () => {
+    expected = "even";
+    actual = evenOrOdd(234566);
     expect(actual).toBe(expected);
   });
 
-  test('test false', () => {
-    expected = false;
-    actual = even(24567);
+  test('test small odd number', () => {
+    expected = "odd";
+    actual = evenOrOdd(7);
     expect(actual).toBe(expected);
   });
 
-});
-
-describe('odd', () => {
-  test('test small number', () => {
-    expected = true;
-    actual = odd(7);
+  test('test large odd number', () => {
+    expected = "odd";
+    actual = evenOrOdd(24567865);
     expect(actual).toBe(expected);
   });
 
-  test('test large number', () => {
-    expected = true;
-    actual = odd(24567865);
-    expect(actual).toBe(expected);
-  });
-
-  test('test false', () => {
-    expected = false;
-    actual = odd(2456);
-    expect(actual).toBe(expected);
-  });
 });
